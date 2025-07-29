@@ -14,7 +14,7 @@ const char *versionUrl = "https://raw.githubusercontent.com/tejaslithium/OTA/mai
 const char *firmwareUrl = "https://raw.githubusercontent.com/tejaslithium/OTA/main/ota/firmware.bin";
 
 // --- Current Firmware Version ---
-String currentVersion = "1.0.1";
+String currentVersion = "1.0.0";
 
 // --- OTA Interval ---
 unsigned long lastUpdateCheck = 0;
