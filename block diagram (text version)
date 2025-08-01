@@ -1,0 +1,54 @@
+┌────────────┐
+│  Booting   │
+└────┬───────┘
+     │
+     ▼
+┌──────────────────────────────────────────────┐
+│ Check if firmware is pending verification    │
+│ (esp_ota_get_state_partition)                │
+│     └─► If YES: validate or rollback         │
+│     └─► If NO: continue boot                 │
+└──────────────────────────────────────────────┘
+     │
+     ▼
+┌──────────────────────┐
+│ Connect to WiFi      │
+│ (SSID + Password)    │
+└────────┬─────────────┘
+         ▼
+┌──────────────────────────────────────────────┐
+│ Sync time from NTP server                    │
+│ (Used for HTTPS certs, but we skip checks)   │
+└──────────────────────────────────────────────┘
+         │
+         ▼
+┌────────────────────────────────────────────┐
+│ Download version.txt from GitHub           │
+│ (Compare with current firmware version)    │
+└──────────────┬─────────────────────────────┘
+               │
+   ┌───────────┴─────────────┐
+   ▼                         ▼
+No update              Update available
+(firmware same)           │
+   │                       ▼
+   │              ┌───────────────────────────────┐
+   │              │ Download firmware.bin         │
+   │              │ via HTTPS using httpUpdate    │
+   │              └────────────┬──────────────────┘
+   │                           ▼
+   │               ┌────────────────────────────┐
+   │               │ OTA Success?               │
+   │               └───────┬────────────────────┘
+   │                       ▼
+   │          ┌───────────────────────────────┐
+   │          │ YES → Auto reboot into new    │
+   │          │ firmware                      │
+   │          └────────────┬──────────────────┘
+   │                       ▼
+   │       ┌────────────────────────────────────────────┐
+   │       │ On next boot: firmware is pending verify   │
+   │       │ App must call `esp_ota_mark_app_valid_...` │
+   │       └────────────────────────────────────────────┘
+   │
+   └──► Loop: Blink LED, Recheck WiFi, Check OTA if reconnected
