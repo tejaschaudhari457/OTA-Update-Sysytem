@@ -1,6 +1,0 @@
-C:\Users\Admin\Downloads\firmware.bin
-
-C:\Users\Admin\OneDrive\Documents\PlatformIO\Projects\esp32\.pio\build\esp32dev\firmware.bin
-  
-versionURL  = "https://raw.githubusercontent.com/tejaschaudhari457/dummyRepo/main/ota/version.txt";
-firmwareURL = "https://raw.githubusercontent.com/tejaschaudhari457/dummyRepo/main/ota/firmware.bin";
