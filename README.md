@@ -7,7 +7,7 @@ OTA update mechanism with rollback support to restore the previous firmware vers
 ### dummy_code.cpp
 Sample code used for testing and simulation purposes.
 
-### block diagram (text version)
+### block diagram
 Text-based representation of the OTA update system architecture and workflow.
 
 ## Project Objective
