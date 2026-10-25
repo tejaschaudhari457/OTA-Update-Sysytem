@@ -1,49 +1,32 @@
-### RTOS_version.cpp
-OTA update implementation using an RTOS environment for task management and update handling.
+OTA Firmware Update for ESP32
 
-### rollback-ota.cpp
-OTA update mechanism with rollback support to restore the previous firmware version if an update fails.
+This project demonstrates different OTA (Over-The-Air) firmware update techniques for ESP32-based devices, including firmware upgrades, RTOS-based update handling, version management, and rollback recovery mechanisms.
 
-### dummy_code.cpp
-Sample code used for testing and simulation purposes.
+Files
+RTOS_version.cpp – OTA implementation using FreeRTOS task management.
+rollback-ota.cpp – OTA update with rollback support if an update fails.
+dummy_code.cpp – Sample code for testing and simulation.
+block diagram – System architecture and OTA workflow.
+Objective
+Implement OTA firmware updates on ESP32.
+Manage firmware versions.
+Support rollback and recovery.
+Simulate and test update processes.
+Explore RTOS-based OTA mechanisms.
+OTA Flow
+Check for new firmware.
+Download firmware image.
+Verify firmware integrity.
+Install firmware.
+Reboot into the new version.
+Roll back if the update fails.
+Technologies
+ESP32
+C++
+FreeRTOS
+OTA Update Techniques
+Embedded Systems
+Author
 
-### block diagram
-Text-based representation of the OTA update system architecture and workflow.
-
-## Project Objective
-
-The objective of this project is to study and implement various OTA update techniques for embedded devices, including:
-
-- Basic OTA firmware updates
-- RTOS-based OTA implementation
-- Firmware version management
-- Rollback and recovery mechanisms
-- Update process simulation and testing
-
----
-
-## OTA Update Flow
-
-1. Device checks for available firmware updates.
-2. Firmware image is downloaded.
-3. Firmware integrity is verified.
-4. New firmware is installed.
-5. Device reboots with the updated firmware.
-6. Rollback is performed if the update fails.
-
----
-
-## Technologies Used
-
-- C++
-- Embedded Systems Concepts
-- RTOS
-- OTA Firmware Update Techniques
-
----
-
-## Author
-
-**Tejas Chaudhari**
-
-GitHub: https://github.com/tejaschaudhari457
+Tejas Chaudhari
+ GitHub: https://github.com/tejaschaudhari457
